@@ -82,3 +82,10 @@ HTTPS		->HTTP Secure (HTTPS) = HTTP over TLS/SSL
 
 TLSv1.2 veya TLSv1.3 ile NGINX nedir ?
 php-fpm WordPress nedir ?
+apk sadece alpine de var.
+APK
+	update
+	add <package name>
+	--no-cache -> on bellege kaydedilmez.
+
+

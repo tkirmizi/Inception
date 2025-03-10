@@ -5,8 +5,8 @@ DATA_PATH = ./data
 all: setup start
 
 setup:
-	@mkdir -p $(DATA_PATH)/mysql
-	@mkdir  -p $(DATA_PATH)/wordpress
+	@mkdir -p ./srcs/data/mysql
+	@mkdir  -p ./srcs/data/wordpress
 
 start:
 	@cd srcs && docker compose -f docker-compose.yml up -d --build
