@@ -1,12 +1,11 @@
 FROM debian:bullseye
 
-RUN apt-get update && apt-get install -y \
-	mariadb-server \
-	&& rm -rf /var/lib/apt/lists/*
+RUN apk update && apk add --no-cache mariadb mariadb-client
 
-COPY # gonna add
-RUN # gonna add
 
-EXPOSE 3306
+# COPY gonna add
+# RUN # gonna add
 
-CMD ["mysqld"]
+# EXPOSE 3306
+
+# CMD ["mysqld"]
