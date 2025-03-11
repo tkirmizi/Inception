@@ -39,19 +39,21 @@ services:
       - wordpress
     networks:
       - inception_network
+
 networks:
   inception_network:
     driver: bridge
+
 volumes:
   db_data:
     driver: local
     driver_opts:
       type: none
-      device: /Users/tkirmizi/my42projects/githubRepo/inceptionGithub/data/mysql
+      device: ${PWD}/data/mysql
       o: bind
   wp_data:
     driver: local
     driver_opts:
       type: none
-      device: /Users/tkirmizi/my42projects/githubRepo/inceptionGithub/data/wordpress
+      device: ${PWD}/data/wordpress
       o: bind

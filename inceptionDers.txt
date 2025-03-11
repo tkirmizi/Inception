@@ -99,3 +99,11 @@ lib (library)		-> sistem kutuphaneleri
 run					-> calisma zamani dosyalarini saklar.
 root				->yoneticinin kisisel dosyalari
 var (variable)		-> degisken veriler. loglar vb.
+all passwords: taha123
+docker log <containerName>
+Mariadb
+	SHOW DATABASES
+		info_schema
+		mysql -> users info
+		sys
+		test
