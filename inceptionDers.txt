@@ -88,4 +88,14 @@ APK
 	add <package name>
 	--no-cache -> on bellege kaydedilmez.
 
-
+Alpine icindeyken
+cat etc/os-release	->alpine surumu
+uname -a 			->kernel surumu
+df -h				->disk kullanimi
+apk info			->yuklu paketler
+etc					->sistem yapilandirma dosyalari
+dev (device)		->donanim bilesenleri vb var
+lib (library)		-> sistem kutuphaneleri
+run					-> calisma zamani dosyalarini saklar.
+root				->yoneticinin kisisel dosyalari
+var (variable)		-> degisken veriler. loglar vb.

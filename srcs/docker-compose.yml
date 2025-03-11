@@ -47,11 +47,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/data/mysql
+      device: /Users/tkirmizi/my42projects/githubRepo/inceptionGithub/data/mysql
       o: bind
   wp_data:
     driver: local
     driver_opts:
       type: none
-      device: ${PWD}/data/wordpress
+      device: /Users/tkirmizi/my42projects/githubRepo/inceptionGithub/data/wordpress
       o: bind
