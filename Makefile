@@ -1,11 +1,12 @@
 NAME = inception
 DOCKER_COMPOSE = srcs/docker-compose.yml
+DATA_PATH = /home/tkirmizi/data
 
 all: setup start
 
 setup:
-	@mkdir -p srcs/data/mysql
-	@mkdir -p srcs/data/wordpress
+	@mkdir -p $(DATA_PATH)/mysql
+	@mkdir -p $(DATA_PATH)/wordpress
 
 start:
 	@cd srcs && docker compose -f docker-compose.yml up -d --build
@@ -18,8 +19,8 @@ clean: stop
 
 fclean: clean
 	@docker volume rm $$(docker volume ls -q) 2>/dev/null || true
-	@rm -rf data
+	@rm -rf $(DATA_PATH)
 
 re: fclean all
 
-.PHONY: all setup start stop clean fclean re 
+.PHONY: all setup start stop clean fclean re
