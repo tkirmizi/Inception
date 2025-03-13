@@ -11,19 +11,19 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';
 FLUSH PRIVILEGES;
 EOF
 
-	/usr/bin/mysqld --user=mysql --bootstrap < /tmp/init.sql
-	echo "MariaDB initialized successfully"
+    /usr/bin/mysqld --user=mysql --bootstrap < /tmp/init.sql
+    echo "MariaDB initialized successfully"
 else
-	echo "MariaDB database already initialized"
-
-	/usr/bin/mysqld --user=mysql --bootstrap << EOF
+    echo "MariaDB database already initialized"
+    
+    /usr/bin/mysqld --user=mysql --bootstrap << EOF
 USE mysql;
 CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE};
 CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';
 GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '${MYSQL_USER}'@'%';
 FLUSH PRIVILEGES;
 EOF
-	echo "MariaDB checked and updated if needed"
+    echo "MariaDB checked and updated if needed"
 fi
 
 exec /usr/bin/mysqld --user=mysql --console
